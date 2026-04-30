@@ -16,3 +16,27 @@ jobs:
     - name: Docker build
       run: |
         hostnamectl   
+
+jobs:
+  build-and-push-2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout the repository
+      uses: actions/checkout@v2
+
+    - name: Docker build-2
+      run: |
+        hostnamectl   
+
+jobs:
+  build-and-push-3:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout the repository
+      uses: actions/checkout@v2
+
+    - name: Docker build-3
+      run: |
+        hostnamectl                   
