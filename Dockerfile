@@ -19,7 +19,7 @@ COPY ./pom.xml /app
 RUN mvn -f /app clean packege
 
 # Copy the app file
-COPY /app/target /app/app.jar
+RUN cp /app/target/*.jar /app/app.jar
 
 EXPOSE 8080
 
