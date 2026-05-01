@@ -15,7 +15,7 @@ COPY ./src /app
 COPY ./pom.xml /app
 
 # Run the application  build
-RUN mvn -f /app clean packege
+RUN mvn -f /app/pom.xml clean packege
 
 # Copy the app file
 RUN cp /app/target/*.jar /app/app.jar
