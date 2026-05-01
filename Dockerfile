@@ -2,8 +2,7 @@
 FROM ubuntu
 
 # Patching, Upgrate and Installing packages & Dependencies
-RUN apt-get update 
-RUN apt-get install upgrade -y
+RUN apt-get update ; apt-get install upgrade -y
 RUN apt install openjdk-17-jre-headless -y
 RUN apt install maven -y
 
