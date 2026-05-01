@@ -2,7 +2,8 @@
 FROM ubuntu
 
 # Patching, Upgrate and Installing packages & Dependencies
-RUN apt-get update ; apt upgrade -y
+RUN apt-get update 
+RUN apt-get install -y
 RUN apt install openjdk-17-jre-headless -y
 RUN apt install maven -y
 
@@ -15,7 +16,7 @@ COPY ./src /app
 COPY ./pom.xml /app
 
 # Run the application  build
-RUN mvn -f /app/pom.xml clean package -X
+RUN mvn -f /app/pom.xml clean package 
 
 # Copy the app file
 RUN cp /app/target/*.jar /app/app.jar
