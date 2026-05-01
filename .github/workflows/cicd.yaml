@@ -15,6 +15,6 @@ jobs:
 
     - name: Docker build
       run: |  
-        docker build -t My-MovieApp-backend:latest .
+        docker build -t my-movieapp-backend:latest .
 
  
