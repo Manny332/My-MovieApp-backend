@@ -11,12 +11,13 @@ RUN apt install maven -y
 WORKDIR /app
 
 # Copy source codes to workdir
-COPY ./.mvn /app
-COPY ./src /app
+COPY application.properties /app/src/main/resources/application.properties
+COPY ./src /app/src
 COPY ./pom.xml /app
 
 # Run the application  build
-RUN mvn -f /app/pom.xml clean package 
+RUN mvn -f /app/pom.xml clean package
+RUN ls -la /app/target
 
 # Copy the app file
 RUN cp /app/target/*.jar /app/app.jar
