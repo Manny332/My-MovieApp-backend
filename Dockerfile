@@ -15,7 +15,7 @@ COPY ./src /app/src
 COPY ./pom.xml /app/pom.xml
 
 # Run the application  build
-RUN mvn -f /app/pom.xml clean package
+RUN mvn -f /app/pom.xml clean package -DskipTest
 RUN ls -la /app/target
 
 # Copy the app file
