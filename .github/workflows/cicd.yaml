@@ -13,7 +13,7 @@ jobs:
     - name: checkout the repository
       uses: actions/checkout@v2
 
-    - name: Run teste
+    - name: Run tests
       run: mvn test 
 
     - name: Docker build
