@@ -11,6 +11,7 @@ RUN apt install maven -y
 WORKDIR /app
 
 # Copy source codes to workdir
+COPY .env    /app/src/main/resources/.env
 COPY ./src /app/src
 COPY ./pom.xml /app/pom.xml
 
@@ -18,7 +19,8 @@ COPY ./pom.xml /app/pom.xml
 RUN mvn -f /app/pom.xml clean package -DskipTests
 RUN ls -la /app/target
 RUN ls -la /app
-
+RUN cat .env
+     
 # Copy the app file
 RUN cp /app/target/*.jar /app/app.jar
 
