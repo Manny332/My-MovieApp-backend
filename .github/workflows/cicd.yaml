@@ -17,6 +17,6 @@ jobs:
       run: | 
         echo "${{ vars.ENV_FILE }}" > .env
         cat .env
-        # docker build -t my-movieapp-backend:latest .
+        docker build -t my-movieapp-backend:latest .
 
  
