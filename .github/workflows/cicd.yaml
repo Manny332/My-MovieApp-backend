@@ -15,9 +15,9 @@ jobs:
 
     - name: configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
-      with: aws-access-key: ${{ secretes.AWS_ACCESS_KEY }}
-            awa-secrete-access-key: ${{ secretes.AWS_SECRETE_ACCESS_KEY }}
-            aws-region: ${{ secretes.AWS_REGION }}
+      with: aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
+            awa-secrete-access-key: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
+            aws-region: ${{ secrets.AWS_REGION }}
 
     - name: Login to ECR
       id: login-ECR
@@ -31,5 +31,5 @@ jobs:
 
     - name: Docker push
       run: |
-        docker tag movieapp_backend:latest ${{ secretes.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/movieapp_backend:latest
-        docker push ${{ secretes.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/movieapp_backend:latest
+        docker tag movieapp_backend:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/movieapp_backend:latest
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/movieapp_backend:latest
