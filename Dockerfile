@@ -11,7 +11,7 @@ RUN apt install maven -y
 WORKDIR /app
 
 # Copy source codes to workdir
-COPY .env    /app/src/main/resources/.env
+COPY .env /app/src/main/resources/.env
 COPY ./src /app/src
 COPY ./pom.xml /app/pom.xml
 
