@@ -32,5 +32,5 @@ jobs:
 
     - name: Docker push
       run: |
-        docker tag my-movieapp-backend:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/my-movieapp-backend:GITHUB_RUN_NUMBER
-        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/my-movieapp-backend:GITHUB_RUN_NUMBER
+        docker tag my-movieapp-backend:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/my-movieapp-backend:${ GITHUB_RUN_NUMBER }
+        docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/my-movieapp-backend:${ GITHUB_RUN_NUMBER }
