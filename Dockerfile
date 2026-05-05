@@ -17,8 +17,7 @@ COPY ./pom.xml /app/pom.xml
 
 # Run the application  build
 RUN mvn -f /app/pom.xml clean package -DskipTests
-RUN ls -la /app/target
-RUN cat .env     
+RUN ls -la /app/target  
 # Copy the app file
 RUN cp /app/target/*.jar /app/app.jar
 
